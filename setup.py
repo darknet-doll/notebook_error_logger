@@ -11,5 +11,5 @@ setup(
         "pandas>=2.0.0",
         "pyairtable>=2.1.0"
     ],
-    url="https://github.com/darknet-doll/colab_error_logger",
+    url="https://github.com/darknet-doll/notebook_error_logger",
 )
