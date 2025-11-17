@@ -1,4 +1,4 @@
-# colab_error_logger/airtable_sync.py
+# notebook_error_logger/airtable_sync.py
 import os
 import pandas as pd
 from pyairtable import Table
