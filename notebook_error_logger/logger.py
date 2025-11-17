@@ -25,8 +25,8 @@ class ErrorLogger:
 
     def _setup_db(self):
         """Create the errors table if it doesn’t exist, and drop previous table if it does exist."""
-        conn = sqlite3.connect(self.db_path)
-        c = conn.cursor()
+        self.conn = sqlite3.connect(self.db_path)
+        c = self.conn.cursor()
 
         # Drop the table if it already exists
         c.execute("DROP TABLE IF EXISTS errors")
@@ -41,8 +41,7 @@ class ErrorLogger:
                 date TEXT
             )
         ''')
-        conn.commit()
-        conn.close()
+        self.conn.commit()
 
     def _install_hook(self):
         """Attach a custom IPython exception handler."""
@@ -59,14 +58,12 @@ class ErrorLogger:
 
     def log_error(self, error_type: str, tb: str):
         """Insert a new error record into the database where project_type will default to "data science notebook"."""
-        conn = sqlite3.connect(self.db_path)
-        c = conn.cursor()
+        c = self.conn.cursor()
         c.execute('''
             INSERT INTO errors (project_type, project_name, error_type, date)
             VALUES (?, ?, ?, ?)
         ''', ("data science notebook", self.project_name, error_type, datetime.utcnow().date().isoformat()))
-        conn.commit()
-        conn.close()
+        self.conn.commit()
 
 
 def start_logger(project_name: str, db_path: str = "error_logs.db"):
