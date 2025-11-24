@@ -3,6 +3,9 @@ import sqlite3
 import traceback
 from datetime import datetime
 
+DEFAULT_DB_PATH="error_logs.db"
+PROJECT_TYPE="data science notebook"
+
 try:
     from IPython.core.interactiveshell import InteractiveShell
 except ImportError:
@@ -10,7 +13,7 @@ except ImportError:
 
 
 class ErrorLogger:
-    def __init__(self, project_name: str, db_path: str = "error_logs.db"):
+    def __init__(self, project_name: str, db_path: str = DEFAULT_DB_PATH):
         """
         Initialize the error logger.
 
@@ -62,11 +65,11 @@ class ErrorLogger:
         c.execute('''
             INSERT INTO errors (project_type, project_name, error_type, date)
             VALUES (?, ?, ?, ?)
-        ''', ("data science notebook", self.project_name, error_type, datetime.utcnow().date().isoformat()))
+        ''', (PROJECT_TYPE, self.project_name, error_type, datetime.utcnow().date().isoformat()))
         self.conn.commit()
 
 
-def start_logger(project_name: str, db_path: str = "error_logs.db"):
+def start_logger(project_name: str, db_path: str = DEFAULT_DB_PATH):
     """
     Start error logging for the current session.
     """

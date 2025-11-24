@@ -1,3 +1,5 @@
 .env
+.venv
+**/__pycache__/
 notebook_error_logger.egg-info
 error_logs.db
