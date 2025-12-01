@@ -1,4 +1,4 @@
-Have you ever wanted to turn **coding mistakes into measurable feedback? Impact Counter** is a Python utility for [Jupyter]([url](https://jupyter-notebook.readthedocs.io/)) and [Google Colab]([url](https://colab.research.google.com/)) that logs notebook errors, and counts failures - letting you use tracked errors for impact play as **reinforcement learning to improve your coding over time**.
+Have you ever wanted to turn **coding mistakes into measurable feedback? This notebook error logger** is a Python utility for [Jupyter]([url](https://jupyter-notebook.readthedocs.io/)) and [Google Colab]([url](https://colab.research.google.com/)) that logs notebook errors, and counts failures - letting you use tracked errors for impact play as **reinforcement learning to improve your coding over time**.
 
 Perfect for:
 - Turn notebook crashes into actionable insights
