@@ -16,7 +16,7 @@ class AirTable:
     def write(
         self,
         df,
-        table_name: str = "Errors",
+        table_name: str = "SpankBank",
         link_table_name: str = "Impact Conversion",  # Linked table
         link_field_name: str = "project_type",       # Field in linked table
         project_type_value: str = PROJECT_TYPE # Fixed linked record value
@@ -76,7 +76,7 @@ class AirTable:
 
     def read(
         self,
-        table_name: str = "Errors"
+        table_name: str = "SpankBank"
     ) -> pd.DataFrame:
         """
         Read an Airtable table into a pandas DataFrame.
