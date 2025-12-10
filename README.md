@@ -1,4 +1,4 @@
-# The Impact Play Debugger: A Python Toolkit for Tracking Notebook Crashes
+# The Data Science Debugging Spank Bank: A Python Toolkit for Tracking Notebook Crashes
 
 Have you ever wanted to turn **coding mistakes into measurable feedback? This notebook error logger** is a Python utility for [Jupyter]([url](https://jupyter-notebook.readthedocs.io/)) and [Google Colab]([url](https://colab.research.google.com/)) that logs notebook errors, and counts failures - letting you use tracked errors for impact play as **reinforcement learning to improve your coding over time**.
 
